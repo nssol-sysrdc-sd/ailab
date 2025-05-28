@@ -1,0 +1,48 @@
+{
+  // GitHub Copilot周りの設定を共有用に記載する
+  // エージェント周りの設定
+  "chat.agent.enabled": true, // エージェントを使えるようにする
+  "chat.agent.maxRequests": 25, // エージェントで利用可能な最大リクエスト数
+  "github.copilot.chat.agent.runTasks": true, // VSCodeで設定したタスクを実行できるようにする
+  "github.copilot.chat.agent.thinkingTool": true, // 回答生成前のThinkingを有効化
+  "chat.tools.autoApprove": true, // 全ツールの自動承認。現時点ではホワイトリスト形式で登録することはできず、全てのツールが有効化される
+  "github.copilot.chat.codesearch.enabled": true, // #codebase 使用時のコード検索を有効化
+  "github.copilot.nextEditSuggestions.enabled": true, // Tabでのコード編集提案を有効化
+  "editor.inlineSuggest.edits.allowCodeShifting": "always", // コードをシフトして提案を表示
+  "github.copilot.chat.agent.autoFix": true, // エージェントによる自動修正を有効化
+  // MCP設定
+  "chat.mcp.enabled": true, // MCPサポートの有効化
+  "chat.mcp.discovery.enabled": true, // 他のツールで設定したMCPサーバーの自動発見
+  // プロンプトなどの回答制御のための設定
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true, // インストラクションファイルを使用する
+  "chat.instructionsFilesLocations": {
+    // リポジトリ内のインストラクションファイルを使用する
+    ".github/instructions": true,
+    
+    // user data folder に保存すれば設定の同期からファイルを同期することが可能
+    // macOS での使用前提で記載している
+    // "~/Library/Application Support/Code/User/prompts": true,
+
+    // Windows での使用前提で記載している
+    "$HOME\\AppData\\Roaming\\Code\\User\\prompts": true,
+  },
+  "chat.promptFiles": true, // プロンプトファイルを使用する
+  "chat.promptFilesLocations": {
+    // リポジトリローカル
+    ".github/prompts": true,
+    "~/Library/Application Support/Code/User/prompts": true,
+  },
+
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true, // MarkdownファイルでのCopilotを有効化
+    "scminput": false
+  },
+
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+  },
+  "java.configuration.updateBuildConfiguration": "automatic",
+}
