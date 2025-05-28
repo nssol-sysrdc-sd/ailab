@@ -1,7 +1,7 @@
 data "aws_caller_identity" "current" {}
 
 locals {
-  github_repo = "shimopino/ailab-with-ddd"
+  github_repo = "nssol-sysrdc-sd/ailab"
   region      = "ap-northeast-1"
   account_id  = data.aws_caller_identity.current.account_id
 }
